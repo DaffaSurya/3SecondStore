@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import Dashboard from "./Pages/Dashboard";
+import Admin from "./Pages/Admin";
+import Carabelanja from "./Pages/Carabelanja";
+import Join from "./Pages/Join";
+import Rekrut from "./Pages/Rekrut";
+import { BrowserRouter, Route , Routes } from "react-router-dom";
+import Adminwebsite from "./Pages/Adminwebsite";
+import Financialofficer from "./Pages/Financialofficer";
+import Adminmedsos from "./Pages/Adminmedsos";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <BrowserRouter>
+     <Routes>
+      <Route path="/" element = {<Dashboard/>}/>
+      <Route path="Carabelanja" element = {<Carabelanja/>} />
+      <Route path="Owner" element = {<Admin/>} />
+      <Route path="Join" element = {<Join/>} />
+      <Route path="Recruit" element = {<Rekrut/>} />
+      <Route path="Adminwebsite" element = {<Adminwebsite/>} />
+      <Route path="Financial" element = {<Financialofficer/>} />
+      <Route path="Adminmedsos" element = {<Adminmedsos/>}/>
+     </Routes>
+  </BrowserRouter>
+  )
 }
 
 export default App;
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<App />);
+
